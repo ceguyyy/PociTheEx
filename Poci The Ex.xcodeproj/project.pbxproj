@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AFB11DAA2992A070000B89F0 /* GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB11DA92992A070000B89F0 /* GameApp.swift */; };
+		AFB11DB12992A071000B89F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB11DB02992A071000B89F0 /* Preview Assets.xcassets */; };
+		AFB11DBC2992A0C6000B89F0 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB11DBB2992A0C5000B89F0 /* GameView.swift */; };
+		AFB11DBD2992A104000B89F0 /* CloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C7412981293C006CA463 /* CloudsView.swift */; };
+		AFB11DBE2992A104000B89F0 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
+		AFB11DBF2992A104000B89F0 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
+		AFB11DC02992A104000B89F0 /* DinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C73D298121B3006CA463 /* DinoView.swift */; };
+		AFB11DC12992A111000B89F0 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
+		AFB11DC22992A111000B89F0 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
+		AFB11DC32992A117000B89F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
+		F8DF24E52BF67D7300195440 /* HealthDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AF337BA929727CD800450704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF535614297D5F80005C8083 /* DinoStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoStateModel.swift; sourceTree = "<group>"; };
+		AF535618297D60F2005C8083 /* ObstacleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleModel.swift; sourceTree = "<group>"; };
+		AFB11DA42992A070000B89F0 /* Game Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFB11DA92992A070000B89F0 /* GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameApp.swift; sourceTree = "<group>"; };
+		AFB11DB02992A071000B89F0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFB11DBB2992A0C5000B89F0 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		AFD91487297FCC2C00436337 /* ObstacleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleView.swift; sourceTree = "<group>"; };
+		AFDE343B29824D89005B0D26 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
+		AFE0C73D298121B3006CA463 /* DinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoView.swift; sourceTree = "<group>"; };
+		AFE0C7412981293C006CA463 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
+		F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataFetcher.swift; sourceTree = "<group>"; };
+		F8DF24E62BF67F7C00195440 /* Game-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Game-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F8DF24E72BF6824900195440 /* Game Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game Watch App.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFB11DA12992A070000B89F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF337B9329727B9500450704 = {
+			isa = PBXGroup;
+			children = (
+				AF337B9A29727BE500450704 /* Shared */,
+				AFB11DA82992A070000B89F0 /* Game Watch App */,
+				AF337BA329727CD700450704 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF337B9A29727BE500450704 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AF337BB22972819C00450704 /* Sources */,
+				AF337B9D29727C0F00450704 /* Core */,
+				AF337B9C29727BFD00450704 /* Extensions */,
+				AF337B9B29727BF600450704 /* Model */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AF337B9B29727BF600450704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF535614297D5F80005C8083 /* DinoStateModel.swift */,
+				AF535618297D60F2005C8083 /* ObstacleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF337B9C29727BFD00450704 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF337B9D29727C0F00450704 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
+				AFE0C73D298121B3006CA463 /* DinoView.swift */,
+				AFE0C7412981293C006CA463 /* CloudsView.swift */,
+				AFDE343B29824D89005B0D26 /* GroundView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AF337BA329727CD700450704 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFB11DA42992A070000B89F0 /* Game Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF337BB22972819C00450704 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AF337BA929727CD800450704 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AFB11DA82992A070000B89F0 /* Game Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F8DF24E72BF6824900195440 /* Game Watch App.entitlements */,
+				F8DF24E62BF67F7C00195440 /* Game-Watch-App-Info.plist */,
+				AFB11DBA2992A0B1000B89F0 /* App */,
+				AFB11DB92992A0AA000B89F0 /* Core */,
+				AFB11DAF2992A071000B89F0 /* Preview Content */,
+			);
+			path = "Game Watch App";
+			sourceTree = "<group>";
+		};
+		AFB11DAF2992A071000B89F0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AFB11DB02992A071000B89F0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AFB11DB92992A0AA000B89F0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */,
+				AFB11DBB2992A0C5000B89F0 /* GameView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AFB11DBA2992A0B1000B89F0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AFB11DA92992A070000B89F0 /* GameApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFB11DA32992A070000B89F0 /* Game Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFB11DB22992A071000B89F0 /* Build configuration list for PBXNativeTarget "Game Watch App" */;
+			buildPhases = (
+				AFB11DA02992A070000B89F0 /* Sources */,
+				AFB11DA12992A070000B89F0 /* Frameworks */,
+				AFB11DA22992A070000B89F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Game Watch App";
+			productName = "Game Watch App";
+			productReference = AFB11DA42992A070000B89F0 /* Game Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF337B9429727B9500450704 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					AFB11DA32992A070000B89F0 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = AF337B9729727B9500450704 /* Build configuration list for PBXProject "Poci The Ex" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF337B9329727B9500450704;
+			productRefGroup = AF337BA329727CD700450704 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFB11DA32992A070000B89F0 /* Game Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFB11DA22992A070000B89F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB11DB12992A071000B89F0 /* Preview Assets.xcassets in Resources */,
+				AFB11DC32992A117000B89F0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFB11DA02992A070000B89F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB11DBC2992A0C6000B89F0 /* GameView.swift in Sources */,
+				AFB11DBF2992A104000B89F0 /* GroundView.swift in Sources */,
+				F8DF24E52BF67D7300195440 /* HealthDataFetcher.swift in Sources */,
+				AFB11DBE2992A104000B89F0 /* ObstacleView.swift in Sources */,
+				AFB11DAA2992A070000B89F0 /* GameApp.swift in Sources */,
+				AFB11DC22992A111000B89F0 /* ObstacleModel.swift in Sources */,
+				AFB11DC12992A111000B89F0 /* DinoStateModel.swift in Sources */,
+				AFB11DC02992A104000B89F0 /* DinoView.swift in Sources */,
+				AFB11DBD2992A104000B89F0 /* CloudsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AF337B9829727B9500450704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		AF337B9929727B9500450704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Release;
+		};
+		AFB11DB32992A071000B89F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Game Watch App/Game Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"Game Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = FSN9NYGU93;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Poci: The Explorer";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please allow for this project";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow for this project";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow for this project";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.Game.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		AFB11DB42992A071000B89F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Game Watch App/Game Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"Game Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = FSN9NYGU93;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Poci: The Explorer";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please allow for this project";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow for this project";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow for this project";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.Game.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF337B9729727B9500450704 /* Build configuration list for PBXProject "Poci The Ex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF337B9829727B9500450704 /* Debug */,
+				AF337B9929727B9500450704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFB11DB22992A071000B89F0 /* Build configuration list for PBXNativeTarget "Game Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFB11DB32992A071000B89F0 /* Debug */,
+				AFB11DB42992A071000B89F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF337B9429727B9500450704 /* Project object */;
+}
