@@ -15,6 +15,8 @@ struct GameView: View {
     @State private var heartRate: Double = 0
     @State private var canPlayGame = false
     @State private var crownValue = 0.0
+    @State private var stepMinimum = 3000
+    @State private var heartRateMinimum = 90
     
     let healthDataFetcher = HealthDataFetcher()
     
@@ -97,28 +99,28 @@ struct GameView: View {
         healthDataFetcher.fetchTodaySteps { count in
             DispatchQueue.main.async {
                 self.stepCount = count
-                self.canPlayGame = stepCount > 1000 && heartRate > 50
+                self.canPlayGame = stepCount > 1000 && heartRate > 90
             }
         }
         
         healthDataFetcher.observeLiveStepCountUpdate { liveCount in
             DispatchQueue.main.async {
                 self.stepCount = liveCount
-                self.canPlayGame = stepCount > 1000 && heartRate > 50
+                self.canPlayGame = stepCount > 1000 && heartRate > 90
             }
         }
         
         healthDataFetcher.fetchHeartRateData { rate in
             DispatchQueue.main.async {
                 self.heartRate = rate
-                self.canPlayGame = stepCount > 1000 && heartRate > 50
+                self.canPlayGame = stepCount > 1000 && heartRate > 90
             }
         }
         
         healthDataFetcher.observeLiveHeartRateUpdate { liveRate in
             DispatchQueue.main.async {
                 self.heartRate = liveRate
-                self.canPlayGame = stepCount > 1000 && heartRate > 50
+                self.canPlayGame = stepCount > 1000 && heartRate > 90
             }
         }
     }
