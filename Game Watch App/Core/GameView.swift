@@ -15,7 +15,7 @@ struct GameView: View {
     @State private var heartRate: Double = 0
     @State private var canPlayGame = false
     @State private var crownValue = 0.0
-    @State private var stepMinimum : Double = 3000
+    @State private var stepMinimum : Double = 3693
     @State private var heartRateMinimum : Double = 90
     let healthDataFetcher = HealthDataFetcher()
     
