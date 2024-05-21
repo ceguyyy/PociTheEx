@@ -13,16 +13,17 @@
 		AFB11DBD2992A104000B89F0 /* CloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C7412981293C006CA463 /* CloudsView.swift */; };
 		AFB11DBE2992A104000B89F0 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
 		AFB11DBF2992A104000B89F0 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
-		AFB11DC02992A104000B89F0 /* DinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C73D298121B3006CA463 /* DinoView.swift */; };
-		AFB11DC12992A111000B89F0 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
+		AFB11DC02992A104000B89F0 /* pociView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C73D298121B3006CA463 /* pociView.swift */; };
+		AFB11DC12992A111000B89F0 /* pociStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* pociStateModel.swift */; };
 		AFB11DC22992A111000B89F0 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
 		AFB11DC32992A117000B89F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
+		F8132AA72BFC4FBC00F20D85 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8132AA62BFC4FBC00F20D85 /* tap.mp3 */; };
 		F8DF24E52BF67D7300195440 /* HealthDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF337BA929727CD800450704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF535614297D5F80005C8083 /* DinoStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoStateModel.swift; sourceTree = "<group>"; };
+		AF535614297D5F80005C8083 /* pociStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pociStateModel.swift; sourceTree = "<group>"; };
 		AF535618297D60F2005C8083 /* ObstacleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleModel.swift; sourceTree = "<group>"; };
 		AFB11DA42992A070000B89F0 /* Game Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB11DA92992A070000B89F0 /* GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameApp.swift; sourceTree = "<group>"; };
@@ -30,8 +31,9 @@
 		AFB11DBB2992A0C5000B89F0 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AFD91487297FCC2C00436337 /* ObstacleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleView.swift; sourceTree = "<group>"; };
 		AFDE343B29824D89005B0D26 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
-		AFE0C73D298121B3006CA463 /* DinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoView.swift; sourceTree = "<group>"; };
+		AFE0C73D298121B3006CA463 /* pociView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pociView.swift; sourceTree = "<group>"; };
 		AFE0C7412981293C006CA463 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
+		F8132AA62BFC4FBC00F20D85 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
 		F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataFetcher.swift; sourceTree = "<group>"; };
 		F8DF24E62BF67F7C00195440 /* Game-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Game-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F8DF24E72BF6824900195440 /* Game Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game Watch App.entitlements"; sourceTree = "<group>"; };
@@ -60,9 +62,9 @@
 		AF337B9A29727BE500450704 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F8132AA62BFC4FBC00F20D85 /* tap.mp3 */,
 				AF337BB22972819C00450704 /* Sources */,
 				AF337B9D29727C0F00450704 /* Core */,
-				AF337B9C29727BFD00450704 /* Extensions */,
 				AF337B9B29727BF600450704 /* Model */,
 			);
 			path = Shared;
@@ -71,24 +73,17 @@
 		AF337B9B29727BF600450704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF535614297D5F80005C8083 /* DinoStateModel.swift */,
+				AF535614297D5F80005C8083 /* pociStateModel.swift */,
 				AF535618297D60F2005C8083 /* ObstacleModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		AF337B9C29727BFD00450704 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AF337B9D29727C0F00450704 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
-				AFE0C73D298121B3006CA463 /* DinoView.swift */,
+				AFE0C73D298121B3006CA463 /* pociView.swift */,
 				AFE0C7412981293C006CA463 /* CloudsView.swift */,
 				AFDE343B29824D89005B0D26 /* GroundView.swift */,
 			);
@@ -206,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8132AA72BFC4FBC00F20D85 /* tap.mp3 in Resources */,
 				AFB11DB12992A071000B89F0 /* Preview Assets.xcassets in Resources */,
 				AFB11DC32992A117000B89F0 /* Assets.xcassets in Resources */,
 			);
@@ -224,8 +220,8 @@
 				AFB11DBE2992A104000B89F0 /* ObstacleView.swift in Sources */,
 				AFB11DAA2992A070000B89F0 /* GameApp.swift in Sources */,
 				AFB11DC22992A111000B89F0 /* ObstacleModel.swift in Sources */,
-				AFB11DC12992A111000B89F0 /* DinoStateModel.swift in Sources */,
-				AFB11DC02992A104000B89F0 /* DinoView.swift in Sources */,
+				AFB11DC12992A111000B89F0 /* pociStateModel.swift in Sources */,
+				AFB11DC02992A104000B89F0 /* pociView.swift in Sources */,
 				AFB11DBD2992A104000B89F0 /* CloudsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

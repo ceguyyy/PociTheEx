@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cloud.png",
+      "filename" : "cute-ghost-transparent-7.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cloud@2x.png",
+      "filename" : "cute-ghost-transparent-7 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cloud@3x.png",
+      "filename" : "cute-ghost-transparent-7 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

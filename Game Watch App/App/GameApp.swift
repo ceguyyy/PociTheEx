@@ -1,9 +1,3 @@
-//
-//  GameApp.swift
-//  Game Watch App
-//
-//  Created by Baris OZGEN on 7.02.2023.
-//
 
 import SwiftUI
 
@@ -19,6 +13,7 @@ struct Game_Watch_AppApp: App {
         WindowGroup {
             if isAuthorized {
                 GameView()
+                
                     .onAppear {
                         // Fetch and display step count
                         healthDataFetcher.fetchTodaySteps { count in

@@ -1,13 +1,7 @@
-//
-//  DinoStateModel.swift
-//  NoInternetGoogleGameSwiftUI
-//
-//  Created by Baris OZGEN on 22.01.2023.
-//
 
 import Foundation
 
-enum DinoStateModel : Int, CaseIterable, Identifiable {
+enum pociStateModel : Int, CaseIterable, Identifiable {
     case idle
     case walk
     case gameOver

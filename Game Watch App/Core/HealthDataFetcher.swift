@@ -1,9 +1,3 @@
-//
-//  HealthDataFetcher.swift
-//  Game-MacOS
-//
-//  Created by Christian Gunawan on 17/05/24.
-//
 
 
 import Foundation

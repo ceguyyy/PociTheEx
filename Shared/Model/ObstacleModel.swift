@@ -1,9 +1,4 @@
-//
-//  ObstacleModel.swift
-//  NoInternetGoogleGameSwiftUI
-//
-//  Created by Baris OZGEN on 22.01.2023.
-//
+
 
 import Foundation
 enum ObstacleModel : Int, CaseIterable, Identifiable {

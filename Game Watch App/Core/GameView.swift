@@ -8,38 +8,37 @@ struct GameView: View {
     @State var getScore = 0
     @State var isGameStart: Bool = false
     @State var dinoPosY = 0.0
-    @State var dinoState: DinoStateModel = .walk
+    @State var dinoState: pociStateModel = .walk
     @State var colliderHit = false
     @State private var playLabelOpacity = 1.0
     @State private var stepCount: Double = 0
     @State private var heartRate: Double = 0
     @State private var canPlayGame = false
     @State private var crownValue = 0.0
-    @State private var stepMinimum = 3000
-    @State private var heartRateMinimum = 90
-    
+    @State private var stepMinimum : Double = 3000
+    @State private var heartRateMinimum : Double = 90
     let healthDataFetcher = HealthDataFetcher()
     
     var body: some View {
         
         ZStack {
-            if !canPlayGame{
-                
-                Image(systemName: "lock.circle").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).foregroundColor(.red)
-            }
+            
             CloudsView().offset(y: 114)
-            ObstacleView(colliderHit: $colliderHit, isGameStart: $isGameStart, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState).offset(y: 0)
+            GroundView(dinoState: $dinoState).offset(y: 160)
+            ObstacleView(colliderHit: $colliderHit, isGameStart: $isGameStart, getScore: $getScore, pociPosY: $dinoPosY, pociState: $dinoState).offset(y: 0)
             scoreLabel.offset(y: -58)
-            GroundView(dinoState: $dinoState).offset(y: 72)
-            DinoView(dinoPosY: $dinoPosY, dinoState: $dinoState, isGameStart: $isGameStart).offset(y: 42)
+           
+            pociView(pociPosY: $dinoPosY, pociState: $dinoState, isGameStart: $isGameStart).offset(y: 42)
             replayButton.offset(y: -29)
             playLabel
             if !canPlayGame {
+                
                 Text("Your heart rate is not fast enough or step count is not high enough to play.")
                     .foregroundColor(.red)
                     .padding(50)
                     .offset(y: 150)
             }
+            
         }
         .scaleEffect(0.54)
         .onAppear {
@@ -54,20 +53,20 @@ struct GameView: View {
                 Text("Score \(String(format: "%.5d", getScore))")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(.darkGray))
+                    .foregroundColor(Color(.lightGray))
                 Text("HeartRate: \(String(format: "%.0f", heartRate))")
                     .font(.caption)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(.darkGray))
+                    .foregroundColor(Color(.lightGray))
                 
                 Text("Steps: \( stepCount.formattedString())")
                     .font(.caption)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(.darkGray))
-                
+                    .foregroundColor(Color(.lightGray))
+                Spacer()
             }
         }
-        .frame(maxWidth: 350, maxHeight: .infinity, alignment: .topTrailing)
+        .frame(alignment: .topTrailing)
         .padding()
         .zIndex(1)
     }
@@ -99,28 +98,28 @@ struct GameView: View {
         healthDataFetcher.fetchTodaySteps { count in
             DispatchQueue.main.async {
                 self.stepCount = count
-                self.canPlayGame = stepCount > 1000 && heartRate > 90
+                self.canPlayGame = stepCount > stepMinimum && heartRate > heartRateMinimum
             }
         }
         
         healthDataFetcher.observeLiveStepCountUpdate { liveCount in
             DispatchQueue.main.async {
                 self.stepCount = liveCount
-                self.canPlayGame = stepCount > 1000 && heartRate > 90
+                self.canPlayGame = stepCount > stepMinimum && heartRate > heartRateMinimum
             }
         }
         
         healthDataFetcher.fetchHeartRateData { rate in
             DispatchQueue.main.async {
                 self.heartRate = rate
-                self.canPlayGame = stepCount > 1000 && heartRate > 90
+                self.canPlayGame = stepCount > stepMinimum && heartRate > heartRateMinimum
             }
         }
         
         healthDataFetcher.observeLiveHeartRateUpdate { liveRate in
             DispatchQueue.main.async {
                 self.heartRate = liveRate
-                self.canPlayGame = stepCount > 1000 && heartRate > 90
+                self.canPlayGame = stepCount > stepMinimum && heartRate > heartRateMinimum
             }
         }
     }
@@ -145,7 +144,7 @@ struct GameView: View {
         .opacity(playLabelOpacity)
         .onAppear {
             withAnimation(.spring().delay(5)) {
-                playLabelOpacity = 0.0
+                playLabelOpacity = 0.1
             }
         }
     }

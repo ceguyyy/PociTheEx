@@ -1,9 +1,4 @@
-//
-//  CloudsView.swift
-//  NoInternetGoogleGameSwiftUI
-//
-//  Created by Baris OZGEN on 25.01.2023.
-//
+
 
 import SwiftUI
 
@@ -16,20 +11,20 @@ struct CloudsView: View {
             Image("cloud")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 14)
+                .frame(height: 50)
                 .offset(x: cloudsPosX[2], y: cloudsPosY[2])
             
             Image("cloud")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 29)
+                .frame(height: 100)
                 .offset(x: cloudsPosX[0], y: cloudsPosY[0])
             
             Image("cloud")
                 .resizable()
                 .scaledToFit()
                 .scaleEffect(x: -1)
-                .frame(height: 29)
+                .frame(height: 100)
                 .offset(x: cloudsPosX[1], y: cloudsPosY[1])
         }
         .onAppear{
