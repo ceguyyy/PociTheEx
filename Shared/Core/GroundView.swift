@@ -3,7 +3,7 @@ import SwiftUI
 
 struct GroundView: View {
     @State private var groundPosX = 90.0
-    @Binding var dinoState : pociStateModel
+    @Binding var pocisState : pociStateModel
     
     var body: some View {
         
@@ -13,14 +13,14 @@ struct GroundView: View {
                     .scaledToFit()
                     .frame(width: 2900)
                     .offset(x: groundPosX)
-                    .opacity(dinoState != .gameOver ? 1 : 0)
+                    .opacity(pocisState != .gameOver ? 1 : 0)
                 Image("way")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 2900)
                     .offset(x: 29)
                     
-                .opacity(dinoState != .gameOver ? 0 : 1)
+                .opacity(pocisState != .gameOver ? 0 : 1)
             }
             .frame(width: 430)
             .clipped()
@@ -34,6 +34,6 @@ struct GroundView: View {
 
 struct GroundView_Previews: PreviewProvider {
     static var previews: some View {
-        GroundView(dinoState: .constant(.walk))
+        GroundView(pocisState: .constant(.walk))
     }
 }

@@ -6,6 +6,7 @@ struct CloudsView: View {
     @State private var cloudsPosX = [300.0, 300.0, 300]
     @State private var cloudsPosY = [-229, -129.0, -292]
     var body: some View {
+        
         ZStack{
             
             Image("cloud")

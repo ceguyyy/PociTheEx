@@ -62,7 +62,6 @@
 		AF337B9A29727BE500450704 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F8132AA62BFC4FBC00F20D85 /* tap.mp3 */,
 				AF337BB22972819C00450704 /* Sources */,
 				AF337B9D29727C0F00450704 /* Core */,
 				AF337B9B29727BF600450704 /* Model */,
@@ -82,6 +81,7 @@
 		AF337B9D29727C0F00450704 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F8132AA62BFC4FBC00F20D85 /* tap.mp3 */,
 				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
 				AFE0C73D298121B3006CA463 /* pociView.swift */,
 				AFE0C7412981293C006CA463 /* CloudsView.swift */,

@@ -1,8 +1,10 @@
-
 import SwiftUI
+
+
+
 struct ObstacleView : View {
     @State private var posX : Double = 0
-    @State private var posXs : [Double] = [0.0,0.0,0.0,0]
+    @State private var posXs : [Double] = [0.0, 0.0, 0.0, 0]
     @State private var maxX: Double = 500
     @State private var minX: Double = -500
     @State var speed: Double = 15.0
@@ -13,12 +15,16 @@ struct ObstacleView : View {
     @Binding var getScore : Int
     @Binding var pociPosY : Double
     @Binding var pociState : pociStateModel
-
-    let timer = Timer.publish(every: 0.007, on: .main, in: .common).autoconnect()
+    @State private var spawnSpeed: Double = 15.0
+    @State private var timeElapsed: Double = 0.0
+    @State private var initialTime: Date = Date()
+    
+    
+    let timer = Timer.publish(every: 0.005, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
-        ZStack{
+        ZStack {
             ObstaclePrefab(changeIt: $changeIt, posX: $posXs[0], colliderHit: $colliderHit, getScore: $getScore, pociPosY: $pociPosY, pociState: $pociState)
                 .position(x: posXs[0], y: 96)
             ObstaclePrefab(changeIt: $changeIt, posX: $posXs[1], colliderHit: $colliderHit, getScore: $getScore, pociPosY: $pociPosY, pociState: $pociState)
@@ -28,32 +34,42 @@ struct ObstacleView : View {
             ObstaclePrefab(changeIt: $changeIt, posX: $posXs[3], colliderHit: $colliderHit, getScore: $getScore, pociPosY: $pociPosY, pociState: $pociState)
                 .position(x: posXs[3], y: 96)
         }
-        .onAppear{
+        .onAppear {
             changeIt.toggle()
             posX = maxX
-            posXs = [posX, posX+258, posX+592, posX+900]
+            posXs = [posX, posX + 258, posX + 592, posX + 900]
+            initialTime = Date()
         }
         .onReceive(timer) { _ in
             
             if isGameStart && !colliderHit {
+                let currentTime = Date()
+                let elapsedTime = currentTime.timeIntervalSince(initialTime)
                 
                 posX -= 1
-                posXs = [posX, posX+258, posX+592, posX+900]
+                posXs = [posX, posX + 258, posX + 592, posX + 900]
                 
                 if posX < -990 {
                     posX = maxX
                 }
+                
+                // Increase spawn speed gradually over time
+                if elapsedTime >= 10.0 {
+                    spawnSpeed -= 0.2 // Increase the speed increment for faster spawning
+                    initialTime = currentTime
+                }
             }
         }
-        .onChange(of: colliderHit, perform: { newValue in
-            if newValue == false {
+        .onChange(of: colliderHit) { newValue in
+            if !newValue {
                 posX = maxX
-                posXs = [posX, posX+258, posX+592, posX+900]
+                posXs = [posX, posX + 258, posX + 592, posX + 900]
+                spawnSpeed = 15.0
+                initialTime = Date()
             }
-        })
-        .frame(width: 430,height: 192)
+        }
+        .frame(width: 430, height: 192)
         .clipped()
-        
     }
 }
 
@@ -102,6 +118,7 @@ private struct ObstaclePrefab: View {
         }
     }
 }
+
 struct ObstacleView_Previews: PreviewProvider {
     static var previews: some View {
         ObstacleView( colliderHit: .constant(false), isGameStart: .constant(true), getScore: .constant(0), pociPosY: .constant(-40), pociState: .constant(.walk)).offset(x: 0, y: 0)
