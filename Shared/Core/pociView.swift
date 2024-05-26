@@ -4,7 +4,7 @@ import AVFoundation
 
 
 struct pociView: View {
-    @State private var PociCurrentImage = UIImage(named: "dino-idle")!
+    @State private var PociCurrentImage = UIImage(named: "poci-idle")!
     @Binding var pociPosY: Double
     @State var dinoPosX = -129.0
     @Binding var pociState : pociStateModel
@@ -31,7 +31,7 @@ struct pociView: View {
                     if pociState == .walk {
                         getPociState(state: .jump)
                         isGameStart = true
-                        
+                        WKInterfaceDevice.current().play(.success)
                     }
                     
                     
@@ -105,7 +105,7 @@ extension pociView{
     }
     
 }
-struct DinoView_Previews: PreviewProvider {
+struct pociView_Previews: PreviewProvider {
     static var previews: some View {
         pociView(pociPosY: .constant(0), pociState: .constant(.walk), isGameStart: .constant(false))
     }

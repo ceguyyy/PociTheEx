@@ -18,6 +18,8 @@
 		AFB11DC22992A111000B89F0 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
 		AFB11DC32992A117000B89F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
 		F8132AA72BFC4FBC00F20D85 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8132AA62BFC4FBC00F20D85 /* tap.mp3 */; };
+		F86DAD552BFD966200E7ECBF /* horrorbgh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F86DAD532BFD966200E7ECBF /* horrorbgh.mp3 */; };
+		F86DAD562BFD966200E7ECBF /* hr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F86DAD542BFD966200E7ECBF /* hr.mp3 */; };
 		F8DF24E52BF67D7300195440 /* HealthDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		AFE0C73D298121B3006CA463 /* pociView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pociView.swift; sourceTree = "<group>"; };
 		AFE0C7412981293C006CA463 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
 		F8132AA62BFC4FBC00F20D85 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
+		F86DAD532BFD966200E7ECBF /* horrorbgh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = horrorbgh.mp3; sourceTree = "<group>"; };
+		F86DAD542BFD966200E7ECBF /* hr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hr.mp3; sourceTree = "<group>"; };
 		F8DF24E32BF67CA200195440 /* HealthDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataFetcher.swift; sourceTree = "<group>"; };
 		F8DF24E62BF67F7C00195440 /* Game-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Game-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F8DF24E72BF6824900195440 /* Game Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game Watch App.entitlements"; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		AF337B9D29727C0F00450704 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F86DAD532BFD966200E7ECBF /* horrorbgh.mp3 */,
+				F86DAD542BFD966200E7ECBF /* hr.mp3 */,
 				F8132AA62BFC4FBC00F20D85 /* tap.mp3 */,
 				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
 				AFE0C73D298121B3006CA463 /* pociView.swift */,
@@ -201,6 +207,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86DAD562BFD966200E7ECBF /* hr.mp3 in Resources */,
+				F86DAD552BFD966200E7ECBF /* horrorbgh.mp3 in Resources */,
 				F8132AA72BFC4FBC00F20D85 /* tap.mp3 in Resources */,
 				AFB11DB12992A071000B89F0 /* Preview Assets.xcassets in Resources */,
 				AFB11DC32992A117000B89F0 /* Assets.xcassets in Resources */,
@@ -373,7 +381,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.Game.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = Christian.Game.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -453,7 +461,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = barisozgen.Game.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = Christian.Game.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

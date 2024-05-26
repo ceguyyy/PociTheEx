@@ -1,5 +1,5 @@
 import SwiftUI
-
+import WatchKit
 
 
 struct ObstacleView : View {
@@ -53,9 +53,8 @@ struct ObstacleView : View {
                     posX = maxX
                 }
                 
-                // Increase spawn speed gradually over time
                 if elapsedTime >= 10.0 {
-                    spawnSpeed -= 0.2 // Increase the speed increment for faster spawning
+                    spawnSpeed -= 0.2
                     initialTime = currentTime
                 }
             }
@@ -104,19 +103,21 @@ private struct ObstaclePrefab: View {
           
             if pociPosY > -40 && posX > 129 && posX < 140 {
                 colliderHit = true
+                WKInterfaceDevice.current().play(.failure)
                 pociState = .gameOver
             }
             if !colliderHit && posX == 29 {
                 
-                let getRandomScore = Int.random(in: 7..<29)
+                let getRandomScore = Int.random(in: 7..<10)
                 withAnimation(.spring()){
                     getScore += getRandomScore
-                  
                 }
+               
             }
             
         }
     }
+    
 }
 
 struct ObstacleView_Previews: PreviewProvider {

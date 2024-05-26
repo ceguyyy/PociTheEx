@@ -13,13 +13,13 @@ enum pociStateModel : Int, CaseIterable, Identifiable {
         switch self {
             
         case .idle:
-            return "dino-idle"
+            return "poci-idle"
         case .walk:
-            return "dino-walk-"
+            return "poci-walk-"
         case .gameOver:
-            return "dino-idle-fail"
+            return "poci-idle-fail"
         case .jump:
-            return "dino-idle"//"dino-idle-noeye"
+            return "poci-idle"
         }
     }
 }

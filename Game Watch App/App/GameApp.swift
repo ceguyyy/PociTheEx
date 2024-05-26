@@ -15,26 +15,22 @@ struct Game_Watch_AppApp: App {
                 GameView()
                 
                     .onAppear {
-                        // Fetch and display step count
                         healthDataFetcher.fetchTodaySteps { count in
                             DispatchQueue.main.async {
                                 self.stepCount = count
                             }
                         }
-                        // Start observing live step count updates
                         healthDataFetcher.observeLiveStepCountUpdate { liveCount in
                             DispatchQueue.main.async {
                                 self.stepCount = liveCount
                             }
                         }
-                        
-                        // Fetch and display heart rate
+
                         healthDataFetcher.fetchHeartRateData { rate in
                             DispatchQueue.main.async {
                                 self.heartRate = rate
                             }
                         }
-                        // Start observing live heart rate updates
                         healthDataFetcher.observeLiveHeartRateUpdate { liveRate in
                             DispatchQueue.main.async {
                                 self.heartRate = liveRate

@@ -1,9 +1,10 @@
 import SwiftUI
+import AVFoundation
 
 
 
 struct GameView: View {
-    
+    var backgroundMusic: AVAudioPlayer?
     @State private var score = 0
     @State var getScore = 0
     @State var isGameStart: Bool = false
@@ -18,62 +19,85 @@ struct GameView: View {
     @State private var stepMinimum : Double = 3693
     @State private var heartRateMinimum : Double = 90
     @State private var remainingSteps: Double = 0
+    @State private var remainingHeartRate: Double = 0
     let healthDataFetcher = HealthDataFetcher()
     
     var body: some View {
         
         ZStack {
-            
-            
-            if !canPlayGame{
-                CloudsView().offset(y: 114).opacity(0.3)
-            }
-            GroundView(pocisState: $pocisState).offset(y: 160)
-            ObstacleView(colliderHit: $colliderHit, isGameStart: $isGameStart, getScore: $getScore, pociPosY: $pociPosY, pociState: $pocisState).offset(y: 0)
-            scoreLabel.offset(y: -58)
-           
-            pociView(pociPosY: $pociPosY, pociState: $pocisState, isGameStart: $isGameStart).offset(y: 42)
-            replayButton.offset(y: -29)
-         
-            
-            
-            
-            if canPlayGame {
+
+            cantPlayDisplay.scaleEffect(2)
+            if canPlayGame{
+                CloudsView().offset(y: 114).opacity(1)
                 playLabel
-            }
-            
-            if !canPlayGame {
-            cantPlayGameText
+                GroundView(pocisState: $pocisState).offset(y: 160)
+                ObstacleView(colliderHit: $colliderHit, isGameStart: $isGameStart, getScore: $getScore, pociPosY: $pociPosY, pociState: $pocisState).offset(y: 0)
+                scoreLabel.offset(y: -58)
+                
+                pociView(pociPosY: $pociPosY, pociState: $pocisState, isGameStart: $isGameStart).offset(y: 42)
+                replayButton.offset(y: -29)
+                   
+                
             }
             
         }
-        .scaleEffect(0.54)
+  
         .onAppear {
             fetchHealthData()
+        }   
+        .scaleEffect(0.54)}
+    
+    
+    
+    private var cantPlayDisplay: some View {
+        if !canPlayGame{
+            return AnyView(
+            TabView{
+                ZStack{
+                    CloudsView().offset(y: 125).opacity(0.5)
+                    cantPlayGameText
+                }
+                ZStack{
+                    CloudsView().offset(y: 125).opacity(0.5)
+                    heartRateText
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
+            )
+            
+            
+        }else{
+            return AnyView(EmptyView())
         }
-        .disabled(!canPlayGame)
     }
+
+    
+    
+    
+    
     
     private var scoreLabel: some View {
         if canPlayGame{
             return AnyView(
-            HStack {
-                VStack {
-                    Text("Score \(String(format: "%.5d", getScore))")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(.lightGray))
-                    Spacer()
+                HStack {
+                    VStack {
+                        Text("Score \(String(format: "%.5d", getScore))")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.lightGray))
+                        Spacer()
+                    }
                 }
-            }
-            .frame(alignment: .topTrailing)
-            .padding()
-            .zIndex(1)
+                    .frame(alignment: .topTrailing)
+                    .padding()
+                    .zIndex(1)
             )
         }else{
             return AnyView(EmptyView())
         }
     }
+    
+    
     
     private var replayButton: some View {
         VStack {
@@ -106,6 +130,7 @@ struct GameView: View {
             }
         }
         
+        
         healthDataFetcher.observeLiveStepCountUpdate { liveCount in
             DispatchQueue.main.async {
                 self.stepCount = liveCount
@@ -127,6 +152,7 @@ struct GameView: View {
             }
         }
     }
+    
     
     private func resetGame() {
         pociPosY = -7
@@ -159,24 +185,77 @@ struct GameView: View {
         return String(format: "%.0f", remainingSteps)
     }
     
-    private var cantPlayGameText: some View {
-        HStack {
-            VStack {
-                Text("\(calculateRemainingSteps())").font(.largeTitle) .fontWeight(.bold)
-                    .foregroundColor(Color(.lightGray))
-                Text("Remaining Steps To Play ")
-                    .font(.system(size: 25))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(.lightGray))
-                Spacer()
-            }
-        }
-        .frame(alignment: .topTrailing)
-        .padding()
-        .zIndex(1)
+    private func calculateRemainingHeartRate() -> String {
+        let remainingHeartRate = heartRateMinimum - heartRate
+        return String(format: "%.0f", remainingHeartRate)
     }
-
+    
+    private var cantPlayGameText: some View {
+        
+        ZStack{
+            ProgressView(value: stepCount, total: stepMinimum)
+                .progressViewStyle(CircularProgressViewStyle())
+                .scaleEffect(3.5).opacity(0.7).colorMultiply(.green)
+            
+            VStack {
+                
+                Text("\(calculateRemainingSteps())")
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+               
+                
+                Text("Remaining Steps")
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+              
+                Text("To Play")
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+            
+                
+                
+               
+            }
+            Spacer()
+        }
+        
+        
+        
+    }
+    
+    
+    private var heartRateText: some View {
+        
+        
+        ZStack{
+            ProgressView(value: heartRate, total: heartRateMinimum)
+                .progressViewStyle(CircularProgressViewStyle())
+                .scaleEffect(3.5).opacity(0.7).colorMultiply(.red)
+            
+            VStack {
+                
+                Text("\(calculateRemainingHeartRate())")
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+               
+                
+                Text("Remaining Bpm")
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+              
+                Text("To Play")
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+            
+                
+                
+               
+            }
+            Spacer()
+        }
+    }
 }
+
 
 
 

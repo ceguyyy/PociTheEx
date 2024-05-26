@@ -84,7 +84,7 @@ class HealthDataFetcher {
                     }
                     self.healthStore.execute(observerQuery)
                 } else {
-                    // Handle error
+    
                     print("Error enabling background delivery: \(error?.localizedDescription ?? "Unknown error")")
                 }
             }
